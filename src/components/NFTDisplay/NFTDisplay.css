@@ -1,0 +1,40 @@
+/* NFTDisplay.css */
+
+.nft-display {
+    margin: 20px;
+  }
+  
+  .nft-group {
+    margin-bottom: 20px;
+  }
+  
+  /* 6個以上の場合のスライダー設定 */
+  .nft-group .nft-slider .slick-slide > div {
+    padding: 5px; /* スライダー内の各要素にパディングを追加 */
+  }
+  
+  .nft-group .nft-slider .slick-slide .nft-card-container {
+    width: 100%; /* カードの幅をスライダー内で調整 */
+  }
+  
+  /* 6個以下の場合のグリッド設定 */
+  .nft-group .nft-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px; /* カード間の間隔 */
+    justify-content: flex-start; /* 左寄せ */
+  }
+  
+  .nft-group .nft-grid .music-card {
+    flex: 1 1 calc(16.66% - 10px); /* 6カラムで表示、10pxはギャップ分 */
+    max-width: calc(16.66% - 10px);
+  }
+  
+  /* スマホ表示の調整 */
+  @media (max-width: 599px) {
+    .nft-group .nft-grid .music-card {
+      flex: 1 1 calc(25% - 10px); /* 4カラムで表示、10pxはギャップ分 */
+      max-width: calc(25% - 10px);
+    }
+  }
+  

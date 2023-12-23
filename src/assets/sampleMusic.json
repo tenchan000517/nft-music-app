@@ -1,0 +1,29 @@
+{
+  "name": " #1",
+  "description": " #1",
+  "image": "https://nft-mint.xyz/data/paoimages/1.png",
+  "animation_url": "https://nft-mint.xyz/data/paomusic/1.mp3",
+  "edition": 1,
+  "attributes": [
+    {
+      "trait_type": "LETTER EFFECT",
+      "value": "Love"
+    },
+    {
+      "trait_type": "RIGHT ITEM",
+      "value": "Ai02"
+    },
+    {
+      "trait_type": "LEFT ITEM",
+      "value": "Beer"
+    },
+    {
+      "trait_type": "UPPER ITEM",
+      "value": "Shuku"
+    },
+    {
+      "trait_type": "CHARACTER",
+      "value": "Chibi Jin"
+    }
+  ]
+}

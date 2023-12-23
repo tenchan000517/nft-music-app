@@ -1,0 +1,26 @@
+.walletConnect {
+  padding: 20px;
+  background-color: #eef2f7;
+  border: 1px solid #cfd8e3;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* ConnectButton.css */
+.connect-button {
+  background-color: black; /* 背景色を黒に */
+  color: white; /* 文字色を白に */
+  padding: 10px 20px; /* 内側の余白を設定 */
+  border-radius: 20px; /* 角を丸く */
+  border: none; /* ボーダーを消す */
+  cursor: pointer; /* カーソルをポインタに */
+  position: absolute; /* 絶対位置指定 */
+  top: 35px; /* 上から10pxの位置に */
+  right: 10px; /* 右から10pxの位置に */
+}
+
+.connect-button:hover {
+  background-color: #333333; /* ホバー時の背景色を少し明るく */
+}
