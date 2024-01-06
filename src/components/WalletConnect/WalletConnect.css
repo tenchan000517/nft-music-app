@@ -16,9 +16,7 @@
   border-radius: 20px; /* 角を丸く */
   border: none; /* ボーダーを消す */
   cursor: pointer; /* カーソルをポインタに */
-  position: absolute; /* 絶対位置指定 */
-  top: 35px; /* 上から10pxの位置に */
-  right: 10px; /* 右から10pxの位置に */
+
 }
 
 .connect-button:hover {

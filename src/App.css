@@ -1,6 +1,6 @@
 .App {
   text-align: center;
-  padding: 50px;
+  padding: 5px;
   padding-bottom: 80px; /* 音楽プレーヤーの高さに応じて調整 */
 }
 
@@ -9,26 +9,6 @@ img {
   height: 300px;
   object-fit: cover;
   margin-bottom: 20px;
-}
-
-.music-list {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* 基本のスタイル */
-  gap: 16px;
-}
-
-/* PC表示 */
-@media (min-width: 600px) {
-  .music-list {
-    grid-template-columns: repeat(6, 1fr); /* 6カラム表示 */
-  }
-}
-
-/* スマートフォン表示 */
-@media (max-width: 599px) {
-  .music-list {
-    grid-template-columns: repeat(4, 1fr); /* 4カラム表示 */
-  }
 }
 
 @import "~slick-carousel/slick/slick.css";

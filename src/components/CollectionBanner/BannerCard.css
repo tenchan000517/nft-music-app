@@ -1,0 +1,98 @@
+/* BannerCard.css */
+.banner-card {
+    margin: 10px; /* 上下左右に20pxの外側余白 */
+    border-radius: 10px; /* 角丸のデザイン */
+    overflow: hidden; /* 角丸に合わせて内容も丸くする */
+    position: relative; /* 子要素の絶対位置指定のため */
+    background: white; /* 背景色 */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2); /* カードに影をつける */
+    padding: 10px; /* 内側に10pxの余白 */
+    width: 800px; /* カードの最大幅を設定 */
+}
+
+.banner-card img {
+    width: calc(100% - 20px); /* 画像の幅をカードの幅から20px引いたサイズに */
+    height: auto; /* 画像の高さを自動調整 */
+    display: block; /* ブロック要素として表示 */
+    margin: 10px auto; /* 上下に10pxの余白 */
+    border-radius: 5px; /* 角丸のデザイン */
+}
+
+.card-info {
+    position: absolute; /* 絶対位置 */
+    top: 360px; /* 上から10pxの位置に */
+    left: 30px; /* 左から10pxの位置に */
+    background-color: rgba(0, 0, 0, 0.5); /* 背景を半透明の黒に */
+    color: white; /* 文字色は白 */
+    padding: 5px 10px; /* パディングで余白を設定 */
+    border-radius: 10px; /* 角丸のデザイン */
+}
+
+.card-info h3,
+.card-info p {
+  margin: 0; /* 余白なし */
+  margin-bottom: 10px; /* 余白なし */
+
+  font-size: 18px; /* フォントサイズ */
+}
+
+.opensea-button {
+  background-color: #2081E2; /* Openseaの色 */
+  color: white;
+  padding: 5px 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.sample-play-button {
+  background-color: #4CAF50; /* 再生ボタンの色 */
+  color: white;
+  padding: 5px 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-left: 10px;
+  transition: background-color 1s linear;
+}
+
+/* スマートフォン表示時の調整 */
+@media (max-width: 640px) {
+    .banner-card {
+      max-width: 335px; 
+      padding: 5px; /* 内側に10pxの余白 */
+
+    }
+    .banner-card img {
+      width: 100%; 
+      height: auto;
+    }
+    .opensea-button, .sample-play-button {
+      font-size: 12px;
+      padding: 5px;
+    }
+
+  .card-info {
+    position: absolute; /* 絶対位置 */
+    top: 140px; /* 上から10pxの位置に */
+    left: 10px; /* 左から10pxの位置に */
+    right: 10px;
+    background-color: rgba(0, 0, 0, 0.5); /* 背景を半透明の黒に */
+    color: white; /* 文字色は白 */
+    padding: 5px 10px; /* パディングで余白を設定 */
+    border-radius: 10px; /* 角丸のデザイン */
+    text-align: center;
+}
+
+.card-info-child {
+    display: flex; /* Flexbox レイアウトを適用 */
+    flex-direction: row; /* 横並びにする */
+    align-items: center; /* 中央揃えにする */
+  }
+  .card-info-child h3, .card-info-child p {
+    margin-right: 10px; /* 要素間に余白を追加 */
+    font-size: 14px; /* スマートフォン用のフォントサイズに調整 */
+  }
+
+}

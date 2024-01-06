@@ -1,5 +1,6 @@
 // WalletConnect.js
 import React from 'react';
+import './WalletConnect.css';
 
 function WalletConnect({ userAddress, setUserAddress, showMetamaskInstallPrompt, setShowMetamaskInstallPrompt, connectToMetamask }) {
   return (

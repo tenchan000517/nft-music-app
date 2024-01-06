@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import Header from './components/Header';
+// import Header from './components/Header';
 import SearchBox from './components/SearchBox';
 // import SongList from './components/SongList';
 import RecommendedSongs from './components/RecommendedSongs';
@@ -7,10 +7,14 @@ import RecommendedSongs from './components/RecommendedSongs';
 import AudioPlayer from './components/AudioPlayer';
 import WalletConnect from './components/WalletConnect/WalletConnect';
 import NFTDisplay from './components/NFTDisplay/NFTDisplay';
-import MusicCard from './components/MusicCard/MusicCard';
+// import MusicCard from './components/MusicCard/MusicCard';
 import contracts from './contracts/config';
 
-import { useSelector, useDispatch } from 'react-redux'; // 追加
+import { PlayQueueProvider } from './components/Context/PlayQueueContext';
+import CollectionBanner from './components/CollectionBanner/CollectionBanner'; // CollectionBannerのインポート
+import { BrowserRouter as Router } from 'react-router-dom';
+
+import { useDispatch } from 'react-redux'; // 追加
 import { fetchCollectionData } from './redux/dataActions'; // fetchCollectionData アクションをインポート
 
 import './App.css';
@@ -18,14 +22,13 @@ import './App.css';
 function App() {
   const [userAddress, setUserAddress] = useState('');
   const [showMetamaskInstallPrompt, setShowMetamaskInstallPrompt] = useState(false);
-  const [currentSong, setCurrentSong] = useState(null);
 
-  const songs = useSelector(state => state.data.songs); // Reduxから曲データを取得
+  // const songs = useSelector(state => state.data.songs); // Reduxから曲データを取得
   const dispatch = useDispatch();
 
-  const handleSelectSong = (song) => {
-    setCurrentSong(song);
-  };
+  // const handleSelectSong = (song) => {
+  //   setCurrentSong(song);
+  // };
 
   const connectToMetamask = async () => {
     const ethereum = window.ethereum;
@@ -57,13 +60,15 @@ function App() {
   }, [userAddress, dispatch]);
 
   return (
+    <Router>
+
     <div className="App">
-      <Header 
+      {/* <Header 
         userAddress={userAddress} 
         setUserAddress={setUserAddress}
         showMetamaskInstallPrompt={showMetamaskInstallPrompt}
         setShowMetamaskInstallPrompt={setShowMetamaskInstallPrompt}
-      />
+      /> */}
       <SearchBox />
       <WalletConnect 
         userAddress={userAddress} 
@@ -72,23 +77,27 @@ function App() {
         setShowMetamaskInstallPrompt={setShowMetamaskInstallPrompt}
         connectToMetamask={connectToMetamask}
       />
-      <NFTDisplay handleSelectSong={handleSelectSong} />
-      <div className="music-list">
-        {songs.map(song => (
+
+      <PlayQueueProvider> {/* PlayQueueProviderでラップ */}
+
+      <CollectionBanner /> {/* CollectionBannerのレンダリング */}
+
+      <NFTDisplay />
+        {/* {songs.map(song => (
           <MusicCard key={song.name} song={song} onSelect={handleSelectSong} />
-        ))}
-      </div>
+        ))} */}
       {/* <NFTList songs={songs} onSelectSong={handleSelectSong} /> */}
       {/* <SongList songs={songs} onSelectSong={handleSelectSong} /> */}
+
+
       <RecommendedSongs />
-      {currentSong && (
-      <AudioPlayer
-        src={currentSong.animation_url}
-        currentSong={currentSong}
-        autoPlay={false}
-      />
-      )}
+      <AudioPlayer/>
+
+</PlayQueueProvider>
+
     </div>
+    </Router>
+
   );
 }
 

@@ -1,40 +1,39 @@
 /* NFTDisplay.css */
-
 .nft-display {
-    margin: 20px;
-  }
-  
+  margin: 5px;
+  overflow: hidden; /* はみ出しを許可 */
+}
+
+.nft-group {
+  margin-bottom: 20px;
+  text-align: left; /* PCでは左寄せ */
+
+}
+
+/* 6個以上の場合のスライダー設定 */
+.nft-group .nft-slider .slick-slide > div {
+  margin: 0 10px;
+  flex-shrink: 0; /* スライド要素が縮小しないように設定 */
+}
+
+.nft-group .nft-slider .slick-slide .nft-card-container {
+  max-width: 200px; /* カードの最大幅をピクセルで指定 */
+}
+
+.nft-group .nft-grid .nft-card-container {
+  flex: 0 0 auto; /* カードのサイズが変わらないように設定 */
+  max-width: 200px; /* カードの最大幅を指定 */
+  margin: 0 10px; /* カード間の余白 */
+}
+
+
+
+/* スマートフォン表示時の調整 */
+@media (max-width: 640px) {
   .nft-group {
-    margin-bottom: 20px;
+    text-align: center; /* スマートフォンでは中央寄せ */
   }
-  
-  /* 6個以上の場合のスライダー設定 */
   .nft-group .nft-slider .slick-slide > div {
-    padding: 5px; /* スライダー内の各要素にパディングを追加 */
+    margin-right: 10px; /* スマートフォン表示時の余白調整 */
   }
-  
-  .nft-group .nft-slider .slick-slide .nft-card-container {
-    width: 100%; /* カードの幅をスライダー内で調整 */
-  }
-  
-  /* 6個以下の場合のグリッド設定 */
-  .nft-group .nft-grid {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px; /* カード間の間隔 */
-    justify-content: flex-start; /* 左寄せ */
-  }
-  
-  .nft-group .nft-grid .music-card {
-    flex: 1 1 calc(16.66% - 10px); /* 6カラムで表示、10pxはギャップ分 */
-    max-width: calc(16.66% - 10px);
-  }
-  
-  /* スマホ表示の調整 */
-  @media (max-width: 599px) {
-    .nft-group .nft-grid .music-card {
-      flex: 1 1 calc(25% - 10px); /* 4カラムで表示、10pxはギャップ分 */
-      max-width: calc(25% - 10px);
-    }
-  }
-  
+}

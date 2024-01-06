@@ -1,26 +1,74 @@
 /* MusicCard.css */
 .music-card {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    border: 1px solid #ddd;
-    border-radius: 10px;
-    padding: 10px;
-    margin: 10px;
-    background-color: white;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+  transition: transform 0.3s ease-in-out;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 10px;
+  margin: 10px;
+  background-color: white;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+  width: 200px; /* カードの最大幅を設定 */
+  max-height: 220px; /* カードの最大高さを固定 */
+
+}
+
+  .music-card:hover, .music-card:active {
+    transform: scale(1.05); /* ホバーまたはタップ時に少し大きく */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* 影を追加 */
   }
   
   .music-card img {
-    width: 100%; /* カードの幅に合わせて調整 */
-    height: auto; /* 画像の比率を保持 */
-    max-width: 200px; /* 画像の最大幅 */
+    width: 100%;
+    height: auto;
+    width: 180px; /* 画像の幅を固定 */
+    height: 180px; /* 画像の高さを固定 */
+    object-fit: cover; /* 画像が枠に収まるように調整 */
     border-radius: 5px;
-    margin-bottom: 10px; /* 画像とテキスト間の余白 */
+    margin-bottom: 5px; /* 画像とテキスト間のマージンを減らす */
+  }
+
+  .music-card-content h3 {
+    margin-top: 0; /* タイトルの上部のマージンを取り除く */
+    white-space: nowrap; /* テキストを一行で表示 */
+    overflow: hidden; /* はみ出したテキストを非表示に */
+    text-overflow: ellipsis; /* はみ出したテキストを省略記号で表示 */
   }
   
   .music-card-content {
-    padding: 10px;
+    padding: 5px 10px; /* 上下のパディングを調整 */
     text-align: center;
   }
-  
+
+  /* スマートフォン表示時の調整 */
+@media (max-width: 640px) {
+  .music-card {
+    max-width: 150px; 
+    max-height: 200px; 
+    margin: 5px;
+    padding: 5px; /* 内側に10pxの余白 */
+
+  }
+  .music-card img {
+      width: 100%;
+      height: 150px; /* スマートフォン時の画像の高さを固定 */
+      border-radius: 5px;
+      margin-bottom: 5px;
+  }
+
+  .music-card-content h3 {
+    /* スマートフォン表示時のタイトルスタイル */
+    font-size: 14px; /* タイトルのフォントサイズを小さく */
+  }
+
+  .music-card-content {
+    width: 100%;
+    height: auto;
+    padding: 5px;
+    font-size: 12px;
+    text-align: center;
+  }
+
+}

@@ -1,0 +1,34 @@
+/* CollectionBanner.css */
+.collection-banner {
+    margin-bottom: 20px;
+    text-align: left; /* PCでは左寄せ */
+}
+
+.collection-banner-title {
+    text-align: left; /* タイトルを左寄せに */
+    font-size: 30px; /* フォントサイズ */
+    margin-bottom: 20px; /* タイトルとバナーの間に余白 */
+    color: #333; /* テキストの色 */
+    padding-left: 20px; /* 左側に余白を設定 */
+}
+
+.collection-banner .slick-slide > div {
+    margin-right: 5px; 
+    flex-shrink: 0; /* スライド要素が縮小しないように設定 */
+}
+
+.collection-banner .banner-card-container {
+    width: 90%; 
+    margin-bottom: 0; 
+  }
+
+/* スマートフォン表示時の調整 */
+@media (max-width: 640px) {
+    .collection-banner .slick-slide > div {
+      margin-right: 2px;
+    }
+    .collection-banner .banner-card-container {
+      width: 90%;
+      margin-bottom: 0;
+    }
+  }

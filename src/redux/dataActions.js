@@ -1,4 +1,4 @@
-// const PROXY_SERVER_URL = 'http://162.43.48.49:3006';
+// const PROXY_SERVER_URL = 'http://localhost:3006';
 const PROXY_SERVER_URL = 'https://ninjadao-fanart-contest.xyz';
 
 
